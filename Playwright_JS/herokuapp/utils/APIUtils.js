@@ -1,7 +1,6 @@
 export class APIUtils {
-    constructor(request, token) {
+    constructor(request) {
         this.request = request;
-        this.token = token;
     }
 
     async login(data){
@@ -15,11 +14,11 @@ export class APIUtils {
          data: info
         })
     }
-<<<<<<< HEAD
 
-    async test(){
-        
+    async updatingBooking(info, id, token){
+        return await this.request.put(`/booking/${id}`, {
+            data: info,
+            headers: {'Cookie' : `token=${token}`}
+        })
     }
-=======
->>>>>>> 4f5d297a4490192ceb9018ce732e30b8f62c0886
 }
